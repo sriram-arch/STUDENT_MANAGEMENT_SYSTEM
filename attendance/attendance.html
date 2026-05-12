@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Marks Management System</title>
+    <link rel="stylesheet" href="attendance.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Student Marks Management System</h1>
+        
+        <div class="student-selector">
+            <label for="student-dropdown">Select Student:</label>
+            <select id="student-dropdown">
+                <option value="">-- Select a Student --</option>
+                <!-- Students will be populated by TypeScript -->
+            </select>
+        </div>
+        
+        <div id="marks-section" class="hidden">
+            <h2>Enter Marks for <span id="selected-student-name"></span></h2>
+            <table id="marks-table">
+                <thead>
+                    <tr>
+                        <th>Subject</th>
+                        <th>Marks (0-100)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Subjects will be populated by TypeScript -->
+                </tbody>
+            </table>
+            
+            <button id="save-button">Save Marks</button>
+            
+            <div id="results-section" class="hidden">
+                <h3>Results</h3>
+                <div class="results-grid">
+                    <div>Total Marks:</div>
+                    <div id="total-marks">0</div>
+                    
+                    <div>Average:</div>
+                    <div id="average-marks">0</div>
+                    
+                    <div>Grade:</div>
+                    <div id="grade">-</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

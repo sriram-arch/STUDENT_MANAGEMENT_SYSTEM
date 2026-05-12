@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SIGNUP PAGE</title>
+  <link rel="stylesheet" href="signup.css" />
+</head>
+
+<body>
+  <h1 class="pagetitle">STUDENT MANAGEMENT SYSTEM</h1>
+
+  <div class="context">
+    <div class="container">
+      <div class="formbox">
+        <h2 id="form-title">SIGN UP</h2>
+        <form id="signup_form">
+
+          <div class="input-group">
+            <label for="Username">Name</label>
+            <input type="text" id="Username" placeholder="Enter your name" required autocomplete="on" />
+          </div>
+
+          <div class="input-group">
+            <label for="Useremail">Email</label>
+            <input type="email" id="Useremail" placeholder="Enter your email" required autocomplete="on" />
+          </div>
+
+          <div class="input-group">
+            <label for="Userpassword">Password</label>
+            <div class="password-wrapper">
+              <input type="password" id="Userpassword" placeholder="Enter password" required autocomplete="new-password" />
+              <span class="eye-icon" onclick="togglePassword('Userpassword', this)">&#128065;</span>
+            </div>
+          </div>
+
+          <div class="input-group">
+            <label for="UserconfirmPassword">Confirm Password</label>
+            <div class="password-wrapper">
+              <input type="password" id="UserconfirmPassword" placeholder="Confirm password" required autocomplete="new-password" />
+              <span class="eye-icon" onclick="togglePassword('UserconfirmPassword', this)">&#128065;</span>
+            </div>
+          </div>
+
+          <button type="submit" class="btn">Create Account</button>
+
+          <p class="toggle-text">
+            Already have an account?
+            <a href="../login/login.html" id="toggle-link">Login</a>
+          </p>
+
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="./signup.js"></script>
+  <script>
+    function togglePassword(id, icon) {
+      const input = document.getElementById(id);
+      if (input.type === 'password') {
+        input.type = 'text';
+        icon.style.opacity = '1';
+      } else {
+        input.type = 'password';
+        icon.style.opacity = '0.5';
+      }
+    }
+  </script>
+</body>
+
+</html>

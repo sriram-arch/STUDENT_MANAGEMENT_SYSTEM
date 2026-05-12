@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DAHBOARD</title>
+    <link rel="stylesheet" href="dashboard.css" />
+
+
+</head>
+
+<body>
+    <div class="dashboard-container">
+
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <h2>STUDENT MANAGEMENT SYSTEM</h2>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="#" class="active">
+                            <h3>DASHBOARD</h3>
+                        </a>
+                    </li>
+                    <li><a href="#">
+                            <h3 id="dashAddbutton">ADD STUDENT</h3>
+                        </a>
+                    </li>
+                    <li><a href="#">
+                            <h3 id="dashAttendancebutton">ATTENDANCE</h3>
+                        </a>
+                    </li>
+                    <li><a href="#">
+                            <h3 id="dashMarkbutton">MARKSHEET</h3>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+
+        <div class="main-content">
+            <div class="header">
+                <div class="header-title">
+                    <h1>Dashboard</h1>
+                </div>
+                <div class="header-controls">
+                    <!-- <div class="dropdown">
+                        <button class="dropdown-btn">
+                            STUDENTS 
+                            <span>▼</span>
+                        </button>
+                        <div class="dropdown-content">
+                            <a href="#">ADD Student </a>
+                            <a href="#">Attendance</a>
+                            <a href="#">Marks</a>
+                        </div>
+                    </div> -->
+                    <button id="logout-btn" type="submit">Log Out</button>
+                </div>
+            </div>
+
+            <div class="dashboard-content" id="addStudentSection" style="display: none;">
+                <div class="form-content">
+                    <form id="student-form">
+                        <h2>ADD STUDENT</h2>
+                        <label>NAME:
+                            <input type="text" id="Username" placeholder="Username" required autocomplete="on" />
+
+                        </label>
+
+                        <label>EMAIL:
+                            <input type="email" id="Useremail" placeholder="Useremail" required autocomplete="on" />
+
+                        </label>
+
+                        <label>REG NUMBER:
+                            <input type="text" id="Userregnumber" placeholder="Register number" required
+                                autocomplete="on" />
+
+                        </label>
+
+                        <label>PHONE NUMBER:
+                            <input type="tel" id="Userphonenumber" placeholder="Phone number" required
+                                autocomplete="on" />
+
+                        </label>
+                        <button type="submit">Submit</button>
+                    </form>
+                </div>
+                <div id="table-container">
+                    <table border="1">
+                        <thead>
+                            <tr class="tablehead">
+
+                                <th>Name</th>
+                                <th>E-Mail</th>
+                                <th>Reg No</th>
+                                <th>Phone Number</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="userTableBody">
+                            <!-- <tr>
+                                <td>1</td>
+                                <td>John Doe</td>
+                                <td>john@example.com</td>
+                                <td>123-456-7890</td>
+                                <td><button>Edit</button> <button>Delete</button></td>
+                              </tr> -->
+                        </tbody>
+                    </table>
+                </div>
+                <!-- <script src="./dashboard.js"></script> -->
+            </div>
+
+
+            <!-- ATTENDANCE PAGE -->
+            <div class="container" id="addAttendanceSection" style="display: none;">
+                <div id="attendance" class="tab-content active">
+
+
+                    <table id="attendanceTable">
+                        <thead>
+                            <tr id="tabletext">
+                                <th>Name</th>
+                                <th>Reg No</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="attendanceTableBody">
+
+                            <!-- Student rows will be added here dynamically -->
+                        </tbody>
+                    </table>
+                    <button class="btn submit-btn" id="saveAttendance">Save</button><br><br>
+                    <div class="stats">
+                        <p>Total Students: <span id="totalStudents">0</span></p>
+                        <p>Present Today: <span id="presentCount">0</span></p>
+                        <p>Absent Today: <span id="absentCount">0</span></p>
+                    </div>
+                </div>
+                <!-- <script src="./dashboard.js"></script> -->
+            </div>
+
+            <!-- MARSHEET PAGE -->
+           <div id="addMarksheet" style="display: none;">
+
+            <section id="marksheetSection">
+                <h2>Marksheet</h2>
+
+                <label for="studentDropdown">Select Student:</label>
+                <select id="studentDropdown">
+                    <option value="">-- Select Student --</option>
+                </select>
+
+                <form id="marksForm" style="display: none;">
+                    <table>
+                        <tr>
+                            <td>Name:</td>
+                            <td><span id="studentNameDisplay"></span></td>
+                        </tr>
+                        <tr>
+                            <td>Reg No:</td>
+                            <td><span id="studentRegDisplay"></span></td>
+                        </tr>
+                        <tr>
+                            <td>Tamil:</td>
+                            <td><input type="number" id="tamil" required /></td>
+                        </tr>
+                        <tr>
+                            <td>English:</td>
+                            <td><input type="number" id="english" required /></td>
+                        </tr>
+                        <tr>
+                            <td>Maths:</td>
+                            <td><input type="number" id="maths" required /></td>
+                        </tr>
+                        <tr>
+                            <td>Science:</td>
+                            <td><input type="number" id="science" required /></td>
+                        </tr>
+                        <tr>
+                            <td>Social:</td>
+                            <td><input type="number" id="social" required /></td>
+                        </tr>
+                    </table>
+                    <button type="submit">Submit Marks</button>
+                </form>
+
+                <h3>Grade Table</h3>
+                <table id="gradeTable">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Total</th>
+                            <th>Grade</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </section>
+
+            
+
+           </div>
+
+
+
+        </div>
+        <script src="dashboard.js" type="module"></script>
+    </div>
+</body>
+
+</html>
