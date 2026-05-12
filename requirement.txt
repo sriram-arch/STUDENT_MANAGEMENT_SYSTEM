@@ -1,0 +1,36 @@
+# ============================================
+# Student Management System - Requirements
+# ============================================
+# This is a Node.js + TypeScript project.
+# To install all dependencies, run:
+#   npm install
+# ============================================
+
+# --------------------
+# Runtime Dependencies
+# --------------------
+express==^5.1.0         # Web server framework
+pg==^8.14.1             # PostgreSQL client for Node.js
+cors==^2.8.5            # Enable Cross-Origin Resource Sharing
+
+# ---------------------
+# Type Definition Packages
+# ---------------------
+@types/cors==^2.8.17    # TypeScript types for cors
+@types/node==^22.14.0   # TypeScript types for Node.js
+
+# ----------------------
+# Development Dependencies
+# ----------------------
+typescript==^5.8.3      # TypeScript compiler
+ts-node-dev==^2.0.0     # Auto-restart server on file changes
+@types/express==^5.0.1  # TypeScript types for Express
+@types/pg==^8.11.11     # TypeScript types for pg (PostgreSQL)
+
+# ============================================
+# Other Requirements
+# ============================================
+# Runtime:   Node.js v18 or higher
+# Database:  PostgreSQL v14 or higher
+# OS:        Windows / macOS / Linux
+# ============================================
